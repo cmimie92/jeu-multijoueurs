@@ -1,0 +1,126 @@
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		link(rel="stylesheet", href="demande/style.css")
+		title ACCUEIL
+		style.
+			main{
+			width: 50%;
+			margin: 0 auto;
+			text-align: center;
+			}
+			section{
+			width: 700px;
+			margin:  auto;
+			}
+			#avatar1,#avatar2,#avatar3,#avatar4,#avatar5,#avatar6,#avatar7,#avatar8{
+			height: 110px;
+			width: 80px;
+			background: yellow;
+			position:relative;
+			margin-top: 3px;
+			margin-left: 3px;
+			top:2px;
+			background-repeat:no-repeat;
+			background-size: cover;
+			border-radius: 20px;
+			float: left;
+			text-align: center;
+			line-height: 15;
+			}
+			#avatar1{
+			background-image:url("/demande/avatar1.png")  ;
+			left: 2px;
+			}
+			#avatar2{
+			background-image:url("/demande/avatar2.png")  ;
+			left: 2px;
+			}
+			#avatar3{
+			background-image:url("/demande/avatar3.png")  ;
+			left: 2px;
+			}
+			#avatar4{
+			background-image:url("/demande/avatar4.png")  ;
+			left: 2px;
+			}
+			#avatar5{
+			background-image:url("/demande/avatar5.png")  ;
+			left: 2px;
+			}
+			#avatar6{
+			background-image:url("/demande/avatar6.png")  ;
+			left: 2px;
+			}
+			#avatar7{
+			background-image:url("/demande/avatar7.png")  ;
+			left: 2px;
+			}
+			#avatar8{
+			background-image:url("/demande/avatar8.png")  ;
+			left: 2px;
+			}
+			#avatar1:hover,#avatar2:hover,#avatar3:hover,#avatar4:hover,#avatar5:hover,#avatar6:hover,#avatar7:hover,#avatar8:hover{
+			transform: scale(0.8);
+			transition: 0.5s;
+			}
+			.avatar{
+			transform: scale(1.4);
+			transition: 0.5s;
+			color:red;
+			z-index: 50;
+			}
+	body
+		main
+			h1 INSCRIPTION
+			p
+			form(action="/inscrit", method="post")
+				label(for="Pseudo") Pseudo   :
+				input(type="text", name="pseudo")
+				p
+				label(for="email") email   :
+				input(type="email", name="email")
+				p
+				label(for="password") password :
+				input(type="password", name="password")
+				p
+				label(for="lavatar") choix de l'avatar :
+				input(type="number",  name="lavatar" min="1" max="8")
+				p
+				section
+					#avatar1(onclick="auChoix('avatar1')") 1
+					#avatar2(onclick="auChoix('avatar2')") 2
+					#avatar3(onclick="auChoix('avatar3')") 3
+					#avatar4(onclick="auChoix('avatar4')") 4
+					#avatar5(onclick="auChoix('avatar5')") 5
+					#avatar6(onclick="auChoix('avatar6')") 6
+					#avatar7(onclick="auChoix('avatar7')") 7
+					#avatar8(onclick="auChoix('avatar8')") 8
+				br
+				br
+				br
+				br
+				br
+				br
+				br
+				br
+				br
+				input(type="submit", value="envoyer")
+		script(type="text/javascript").
+			// var toto=document.getElementById('avatar1');
+			//   toto.addEventListener('click',function(){
+			//     toto.className='avatar';
+			//   });
+			var tobby=true
+			var tata;
+			var toto;
+			var auChoix=function(message){
+			if(tobby){
+			toto=document.getElementById(message);
+			tata=toto.innerText;
+			console.log(tata);
+			toto.className='avatar';
+			tobby=false
+			}else{ alert('deja choisi')}
+			};

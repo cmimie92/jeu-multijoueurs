@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+    script(type='text/javascript', src='scripts.js')
+    title JEU MULTIJOUEURS
+  body
+    main
+      br
+      h1 log in: PLAYERS #{compteur}
+      p
+      form(action='/form', method='post')
+        label(for='pseudo') Pseudo :
+        input(type='text', name='pseudo')
+        label(for='password') Password :
+        input(type='Password', name='password')
+        input(type='submit', value='envoyer')
+        p #{msg1}
+        
+
+
+    #site
+      a(href='inscription') inscription
